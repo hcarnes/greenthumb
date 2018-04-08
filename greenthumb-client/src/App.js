@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
-import ReactMapGL from 'react-map-gl';
+import GardenMap from './components/GardenMap'
 import './App.css';
 
 const styles = theme => ({
@@ -23,15 +23,6 @@ const styles = theme => ({
 
 class App extends Component {
 
-  state = {
-    viewport: {
-      height: 600,
-      latitude: 40.6981,
-      longitude: -73.9571,
-      zoom: 10
-    }
-  };
-
   render() {
     const { classes } = this.props
     return (
@@ -42,11 +33,7 @@ class App extends Component {
           </Grid>
           <Grid item xs={12} sm={8}>
             <Paper className={classes.contentPaper}>
-              <ReactMapGL
-                {...this.state.viewport}
-                onViewportChange={(viewport) => this.setState({ viewport })}
-                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-              />
+              <GardenMap />
             </Paper>
           </Grid>
           <Grid item xs={12} sm={4}>

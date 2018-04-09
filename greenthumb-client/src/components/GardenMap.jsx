@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
 import { compose, withProps } from "recompose";
+import { connect } from 'react-redux';
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker
 } from "react-google-maps";
+import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 
 class GardenMap extends Component {
 
   render() {
     return (
       <GoogleMap defaultZoom={11} defaultCenter={{ lat: 40.6981, lng: -73.9571 }}>
-        <Marker position={{ lat: 40.6981, lng: -73.9571 }} />
+        <MarkerClusterer
+          averageCenter
+          enableRetinaIcons
+          gridSize={60}
+        >
+          {this.props.gardens.map(garden => (
+            <Marker
+              position={{ lat: parseFloat(garden.latitude), lng: parseFloat(garden.longitude) }}
+            />
+          ))}
+        </MarkerClusterer>
       </GoogleMap>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return { gardens: state.gardens };
+};
 
 export default compose(
   withProps({
@@ -27,5 +43,6 @@ export default compose(
     mapElement: <div style={{ height: `100%` }} />
   }),
   withScriptjs,
-  withGoogleMap
+  withGoogleMap,
+  connect(mapStateToProps)
 )(GardenMap)

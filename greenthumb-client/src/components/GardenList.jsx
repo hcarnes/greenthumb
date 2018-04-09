@@ -14,7 +14,7 @@ class GardenList extends Component {
               <ListItemIcon>
                 <LocalFlorist />
               </ListItemIcon>
-              <ListItemText primary={garden.name} />
+              <ListItemText primary={garden.garden_name} />
             </ListItem>
           ))}
         </List>

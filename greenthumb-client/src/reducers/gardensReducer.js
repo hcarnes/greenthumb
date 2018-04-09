@@ -3,10 +3,11 @@ export default function gardensReducer(state = {
 }, action) {
   switch (action.type) {
 
-    // case 'ADD_COUNT':
-    //   return state.items.concat(state.items.length + 1);
+    case 'ADD_GARDENS':
+      return { ...state, gardens: action.gardens };
 
     default:
+      console.log(action)
       return state;
   }
 }

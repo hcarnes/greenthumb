@@ -8,6 +8,10 @@ import Typography from 'material-ui/Typography';
 import GardenMap from './components/GardenMap'
 import GardenList from './components/GardenList'
 import './App.css';
+import { fetchGardens } from './actions/fetchGardens'
+import { compose } from 'recompose'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 const styles = theme => ({
   root: {
@@ -21,6 +25,11 @@ const styles = theme => ({
 });
 
 class App extends Component {
+
+  componentDidMount() {
+    console.log(this.props)
+    this.props.fetchGardens()
+  }
 
   render() {
     const { classes } = this.props
@@ -50,4 +59,11 @@ class App extends Component {
   }
 }
 
-export default withStyles(styles)(App);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ fetchGardens: fetchGardens }, dispatch)
+}
+
+export default compose(
+  withStyles(styles),
+  connect(null, mapDispatchToProps)
+)(App);

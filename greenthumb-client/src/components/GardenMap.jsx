@@ -21,6 +21,7 @@ class GardenMap extends Component {
         >
           {this.props.gardens.map(garden => (
             <Marker
+              key={`${garden.garden_name}-${garden.jurisdiction}`}
               position={{ lat: parseFloat(garden.latitude), lng: parseFloat(garden.longitude) }}
             />
           ))}

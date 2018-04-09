@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import GardenMap from './components/GardenMap'
+import GardenList from './components/GardenList'
 import './App.css';
 
 const styles = theme => ({
@@ -16,12 +17,7 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: 'left',
     color: theme.palette.text.secondary,
-  },
-  primaryPaper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.primary,
-  },
+  }
 });
 
 class App extends Component {
@@ -44,7 +40,9 @@ class App extends Component {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Paper className={classes.contentPaper}>Garden list goes here</Paper>
+            <Paper className={classes.contentPaper}>
+              <GardenList />
+            </Paper>
           </Grid>
         </Grid>
       </div>

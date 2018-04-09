@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 import GardenMap from './components/GardenMap'
 import './App.css';
 
@@ -27,10 +30,14 @@ class App extends Component {
     const { classes } = this.props
     return (
       <div className={classes.root}>
+        <AppBar position="static" color="default">
+          <Toolbar>
+            <Typography variant="title" color="inherit">
+              Greenthumb Gardens
+          </Typography>
+          </Toolbar>
+        </AppBar>
         <Grid container spacing={8}>
-          <Grid item xs={12}>
-            <Paper className={classes.primaryPaper}>Welcome to Greenthumb Gardens</Paper>
-          </Grid>
           <Grid item xs={12} sm={8}>
             <Paper className={classes.contentPaper}>
               <GardenMap />

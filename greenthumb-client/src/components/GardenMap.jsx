@@ -19,9 +19,9 @@ class GardenMap extends Component {
           enableRetinaIcons
           gridSize={60}
         >
-          {this.props.gardens.map(garden => (
+          {this.props.gardens.map((garden, index) => (
             <Marker
-              key={`${garden.garden_name}-${garden.jurisdiction}`}
+              key={index}
               position={{ lat: parseFloat(garden.latitude), lng: parseFloat(garden.longitude) }}
             />
           ))}

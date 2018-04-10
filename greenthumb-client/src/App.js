@@ -5,11 +5,11 @@ import Grid from 'material-ui/Grid';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
-import GardenMap from './components/GardenMap'
-import FilterableGardenList from './containers/FilterableGardenList'
+import GardenMap from './components/GardenMap';
+import FilterableGardenList from './containers/FilterableGardenList';
 import './App.css';
-import { fetchGardens } from './actions/fetchGardens'
-import { compose } from 'recompose'
+import { fetchGardens } from './actions/fetchGardens';
+import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 

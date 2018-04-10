@@ -7,7 +7,7 @@ class GardenListItem extends Component {
   render() {
     return (
       <div>
-        <ListItem button key={`${this.props.garden.garden_name}-${this.props.garden.jurisdiction}`}>
+        <ListItem button key={this.props.index}>
           <ListItemIcon>
             <LocalFlorist />
           </ListItemIcon>

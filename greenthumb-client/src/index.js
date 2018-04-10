@@ -7,10 +7,17 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import gardensReducer from './reducers/gardensReducer'
 import thunk from 'redux-thunk';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 const store = createStore(gardensReducer, applyMiddleware(thunk));
 
 ReactDOM.render(<Provider store={store}>
-  <App />
+  <Router>
+    <App />
+  </Router>
 </Provider>, document.getElementById('root'));
 registerServiceWorker();

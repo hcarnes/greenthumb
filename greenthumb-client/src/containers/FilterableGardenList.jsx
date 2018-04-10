@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import TextField from 'material-ui/TextField';
 import { connect } from 'react-redux';
 import { searchGardens } from '../actions/searchGardens';

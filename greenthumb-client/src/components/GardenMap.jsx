@@ -32,7 +32,7 @@ class GardenMap extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { gardens: state.gardens };
+  return { gardens: state.gardens.filter(garden => garden.garden_name.toLowerCase().includes(state.query)) };
 };
 
 export default compose(

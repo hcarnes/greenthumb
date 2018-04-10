@@ -6,7 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import GardenMap from './components/GardenMap'
-import GardenList from './components/GardenList'
+import FilterableGardenList from './components/FilterableGardenList'
 import './App.css';
 import { fetchGardens } from './actions/fetchGardens'
 import { compose } from 'recompose'
@@ -50,7 +50,7 @@ class App extends Component {
           </Grid>
           <Grid item xs={12} sm={4}>
             <Paper className={classes.contentPaper}>
-              <GardenList />
+              <FilterableGardenList />
             </Paper>
           </Grid>
         </Grid>

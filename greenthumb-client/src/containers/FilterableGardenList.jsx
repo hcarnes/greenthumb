@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 import { connect } from 'react-redux';
 import { searchGardens } from '../actions/searchGardens';
 import { bindActionCreators } from 'redux';
-import GardenList from './GardenList'
+import GardenList from '../components/GardenList'
 
 class FilterableGardenList extends Component {
 

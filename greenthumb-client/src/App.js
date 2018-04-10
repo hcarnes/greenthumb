@@ -6,7 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import GardenMap from './components/GardenMap'
-import FilterableGardenList from './components/FilterableGardenList'
+import FilterableGardenList from './containers/FilterableGardenList'
 import './App.css';
 import { fetchGardens } from './actions/fetchGardens'
 import { compose } from 'recompose'

@@ -42,18 +42,6 @@ class App extends Component {
           </Typography>
           </Toolbar>
         </AppBar>
-        <Grid container spacing={8}>
-          <Grid item xs={12} sm={8}>
-            <Paper className={classes.contentPaper}>
-              <GardenMap />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <Paper className={classes.contentPaper}>
-              <FilterableGardenList />
-            </Paper>
-          </Grid>
-        </Grid>
       </div>
     );
   }

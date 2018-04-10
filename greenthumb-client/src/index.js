@@ -12,12 +12,16 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import GardenDiscovery from './containers/GardenDiscovery'
 
 const store = createStore(gardensReducer, applyMiddleware(thunk));
 
 ReactDOM.render(<Provider store={store}>
   <Router>
-    <App />
+    <div>
+      <App />
+      <Route path="/" component={GardenDiscovery} />
+    </div>
   </Router>
 </Provider>, document.getElementById('root'));
 registerServiceWorker();

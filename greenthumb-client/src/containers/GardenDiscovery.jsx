@@ -4,6 +4,7 @@ import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import GardenMap from '../components/GardenMap'
 import FilterableGardenList from '../containers/FilterableGardenList'
+import GardenDetails from '../components/GardenDetails'
 
 const styles = theme => ({
   root: {

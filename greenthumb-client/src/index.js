@@ -10,9 +10,11 @@ import thunk from 'redux-thunk';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom'
 import GardenDiscovery from './containers/GardenDiscovery'
+import GardenDetails from './components/GardenDetails'
 
 const store = createStore(gardensReducer, applyMiddleware(thunk));
 
@@ -20,7 +22,10 @@ ReactDOM.render(<Provider store={store}>
   <Router>
     <div>
       <App />
-      <Route path="/" component={GardenDiscovery} />
+      <Switch>
+        <Route exact path="/" component={GardenDiscovery} />
+        <Route exact path="/gardens/:gardenId" component={GardenDetails} />
+      </Switch>
     </div>
   </Router>
 </Provider>, document.getElementById('root'));

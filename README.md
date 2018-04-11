@@ -2,7 +2,9 @@
 
 >Ruby on Rails backend with React and Redux frontend
 
-Users can search for a community garden in NYC and locate the garden on a corresponding map. User can click on a garden to view more information about a particular garden. They can also view which plants can be found in each garden. Plants can be added and removed from gardens. >Ruby on Rails backend with React and Redux frontend## Installation
+Users can search for a community garden in NYC and locate the garden on a corresponding map. User can click on a garden to view more information about a particular garden. They can also view which plants can be found in each garden. Plants can be added and removed from gardens.
+
+## Installation
 Clone this repository and run `bundle install`.
 
 ## Usage

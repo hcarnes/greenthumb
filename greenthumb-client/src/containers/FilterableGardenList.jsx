@@ -11,6 +11,11 @@ class FilterableGardenList extends Component {
     this.props.searchGardens(event.currentTarget.value)
   }
 
+  componentDidMount() {
+    console.log("foobar")
+    this.props.searchGardens(this.props.query)
+  }
+
   render() {
     return (
       <div>

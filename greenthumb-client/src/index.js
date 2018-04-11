@@ -24,6 +24,7 @@ ReactDOM.render(<Provider store={store}>
       <App />
       <Switch>
         <Route exact path="/" component={GardenDiscovery} />
+        <Route exact path="/:query" component={GardenDiscovery} />
         <Route exact path="/gardens/:gardenId" component={GardenDetails} />
       </Switch>
     </div>

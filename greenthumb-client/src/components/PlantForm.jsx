@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addPlant } from '../actions/addPlant';
 
 class PlantForm extends Component {
   constructor(props) {
@@ -9,18 +12,15 @@ class PlantForm extends Component {
     };
   }
 
-  handleOnChange(event) {
+  handleOnChange = (event) => {
     this.setState({
       text: event.target.value,
     });
   }
 
-  handleOnSubmit(event) {
+  handleOnSubmit = (event) => {
     event.preventDefault();
-    this.props.store.dispatch({
-      type: 'ADD_PLANT',
-      plant: this.state.text
-    });
+    this.props.addPlant({ name: this.state.text, gardenIndex: this.props.gardenIndex })
     this.setState({
       text: '',
     });
@@ -29,11 +29,11 @@ class PlantForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <form onSubmit={this.handleOnSubmit}>
           <input
             type="text"
-            value="this.state.text"
-            onChange={(event) => this.handleOnChange(event)} />
+            value={this.state.text}
+            onChange={this.handleOnChange} />
           <input type="submit" />
         </form>
       </div>
@@ -41,4 +41,10 @@ class PlantForm extends Component {
   }
 }
 
-export default PlantInput;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addPlant: addPlant
+  }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(PlantForm);

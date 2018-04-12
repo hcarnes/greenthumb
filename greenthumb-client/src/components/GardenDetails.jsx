@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PlantForm from './PlantForm';
 
 class GardenDetails extends Component {
 
@@ -8,6 +9,7 @@ class GardenDetails extends Component {
     return (
       <div>
         {this.props.garden.garden_name}
+        <PlantForm gardenIndex={this.props.match.params.gardenId} />
       </div>
     )
   }

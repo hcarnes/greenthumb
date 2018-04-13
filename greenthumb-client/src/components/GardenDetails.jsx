@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 class GardenDetails extends Component {
 
   componentDidMount() {
-    this.props.fetchPlants(this.props.match.params.gardenId)
+    if (this.props.plants.length == 0) this.props.fetchPlants(this.props.match.params.gardenId)
   }
 
   render() {

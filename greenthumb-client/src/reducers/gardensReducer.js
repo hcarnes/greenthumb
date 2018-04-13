@@ -20,7 +20,7 @@ export default function gardensReducer(state = {
       return { ...state, plants: uniquePlants }
 
     default:
-      console.log(action)
+      console.debug(action)
       return state;
   }
 }

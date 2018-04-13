@@ -19,7 +19,7 @@ class FilterableGardenList extends Component {
     return (
       <div>
         <TextField onChange={this.handleFilter} placeholder="Search" />
-        <GardenList gardens={this.props.gardens} />
+        <GardenList gardens={this.props.gardens.slice(0, 10)} />
       </div>
     )
   }

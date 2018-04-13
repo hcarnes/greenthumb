@@ -18,7 +18,7 @@ class FilterableGardenList extends Component {
   render() {
     return (
       <div>
-        <TextField onChange={this.handleFilter} placeholder="Search" />
+        <TextField onChange={this.handleFilter} placeholder="Search" value={this.props.query} />
         <GardenList gardens={this.props.gardens.slice(0, 10)} />
       </div>
     )

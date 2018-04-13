@@ -5,6 +5,8 @@ import Grid from 'material-ui/Grid';
 import GardenMap from '../components/GardenMap'
 import FilterableGardenList from '../containers/FilterableGardenList'
 import GardenDetails from '../components/GardenDetails'
+import { connect } from 'react-redux';
+import { compose } from "recompose";
 
 const styles = theme => ({
   root: {
@@ -31,7 +33,7 @@ class GardenDiscovery extends Component {
           </Grid>
           <Grid item xs={12} sm={4}>
             <Paper className={classes.contentPaper}>
-              <FilterableGardenList query={this.props.match.params.query || ""} />
+              <FilterableGardenList query={this.props.match.params.query || this.props.query} />
             </Paper>
           </Grid>
         </Grid>
@@ -40,4 +42,13 @@ class GardenDiscovery extends Component {
   }
 }
 
-export default withStyles(styles)(GardenDiscovery);
+const mapStateToProps = (state) => {
+  return {
+    query: state.query
+  }
+}
+
+export default compose(
+  withStyles(styles),
+  connect(mapStateToProps)
+)(GardenDiscovery)

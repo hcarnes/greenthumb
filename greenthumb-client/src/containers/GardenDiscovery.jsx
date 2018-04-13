@@ -33,7 +33,7 @@ class GardenDiscovery extends Component {
           </Grid>
           <Grid item xs={12} sm={4}>
             <Paper className={classes.contentPaper}>
-              <FilterableGardenList query={this.props.query || this.props.match.params.query || " "} />
+              <FilterableGardenList query={this.props.query || this.props.match.params.query || ""} />
             </Paper>
           </Grid>
         </Grid>

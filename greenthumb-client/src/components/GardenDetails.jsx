@@ -5,7 +5,6 @@ import PlantList from './PlantList';
 import { fetchPlants } from '../actions/fetchPlants';
 import { bindActionCreators } from 'redux';
 import Paper from 'material-ui/Paper';
-import { withStyles } from 'material-ui/styles';
 
 class GardenDetails extends Component {
 
@@ -45,4 +44,5 @@ const mapStateToProps = (state, props) => {
 const style = {
   padding: 20
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(GardenDetails)

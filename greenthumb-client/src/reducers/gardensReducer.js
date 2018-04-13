@@ -13,7 +13,11 @@ export default function gardensReducer(state = {
       return { ...state, plants: [...state.plants, action.plant] }
 
     case 'ADD_PLANTS':
-      return { ...state, plants: [...state.plants, ...action.plants] }
+      const plantsWithDupes = [...state.plants, ...action.plants]
+      const uniquePlants = plantsWithDupes.filter((plant, pos, arr) => {
+        return arr.map(mapPlant => mapPlant["id"]).indexOf(plant["id"]) === pos;
+      });
+      return { ...state, plants: uniquePlants }
 
     default:
       console.log(action)

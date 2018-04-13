@@ -1,5 +1,5 @@
 export default function gardensReducer(state = {
-  gardens: [], query: ""
+  gardens: [], plants: [], query: ""
 }, action) {
   switch (action.type) {
 
@@ -8,6 +8,9 @@ export default function gardensReducer(state = {
 
     case 'SEARCH_GARDENS':
       return { ...state, query: action.query }
+
+    case 'ADD_PLANT':
+      return { ...state, plants: [...state.plants, action.plant] }
 
     default:
       console.log(action)

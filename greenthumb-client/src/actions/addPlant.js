@@ -1,16 +1,16 @@
-// export const addPlant = (plant) => {
-//   return {
-//     type: 'ADD_PLANT',
-//     plant
-//   };
-// };
-
-export function addPlant(plant) {
+export function addPlant(plantToAdd) {
   return async (dispatch) => {
     dispatch({ type: 'START_ADDING_PLANT' });
-
-    const plantsResponse = await fetch('http://localhost:3001/plants')
-    const gardens = await gardensResponse.json()
-    dispatch({ type: 'ADD_GARDENS', gardens })
+    const plantJSON = JSON.stringify({ plant: plantToAdd })
+    const plantResponse = await fetch('http://localhost:3001/plants', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: plantJSON,
+      method: "post"
+    })
+    const plant = await plantResponse.json()
+    dispatch({ type: 'ADD_PLANT', plant })
   };
 }

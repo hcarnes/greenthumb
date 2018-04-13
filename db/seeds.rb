@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times { Plant.create!(name: "example plant") }
+1.times { Plant.create!(name: "exampleplant", garden_index: 1) }

@@ -27,7 +27,6 @@ const styles = theme => ({
 class App extends Component {
 
   componentDidMount() {
-    console.log(this.props)
     this.props.fetchGardens()
   }
 

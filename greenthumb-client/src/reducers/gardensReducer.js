@@ -12,6 +12,9 @@ export default function gardensReducer(state = {
     case 'ADD_PLANT':
       return { ...state, plants: [...state.plants, action.plant] }
 
+    case 'ADD_PLANTS':
+      return { ...state, plants: [...state.plants, ...action.plants] }
+
     default:
       console.log(action)
       return state;

@@ -4,8 +4,12 @@ import PlantForm from './PlantForm';
 import PlantList from './PlantList';
 import { fetchPlants } from '../actions/fetchPlants';
 import { bindActionCreators } from 'redux';
+import Paper from 'material-ui/Paper';
+import { withStyles } from 'material-ui/styles';
 
 class GardenDetails extends Component {
+
+
 
   componentDidMount() {
     if (this.props.plants.length == 0) this.props.fetchPlants(this.props.match.params.gardenId)
@@ -15,9 +19,13 @@ class GardenDetails extends Component {
     if (!this.props.garden) return <div>Loading...</div>
     return (
       <div>
-        {this.props.garden.garden_name}
-        <PlantForm gardenIndex={this.props.match.params.gardenId} />
-        <PlantList plants={this.props.plants} />
+        <Paper style={style}>
+          <h4>
+            {this.props.garden.garden_name}
+          </h4>
+          <PlantForm gardenIndex={this.props.match.params.gardenId} />
+          <PlantList plants={this.props.plants} />
+        </Paper>
       </div>
     )
   }
@@ -34,4 +42,7 @@ const mapStateToProps = (state, props) => {
   };
 };
 
+const style = {
+  padding: 20
+};
 export default connect(mapStateToProps, mapDispatchToProps)(GardenDetails)

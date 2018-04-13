@@ -28,13 +28,14 @@ class PlantForm extends Component {
 
   render() {
     return (
-      <div>
+      <div style={style}>
         <form onSubmit={this.handleOnSubmit}>
           <input
             type="text"
+            placeholder="ex: carrots"
             value={this.state.text}
             onChange={this.handleOnChange} />
-          <input type="submit" />
+          <input value="Add plant" type="submit" />
         </form>
       </div>
     )
@@ -45,6 +46,10 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     addPlant: addPlant
   }, dispatch);
+};
+
+const style = {
+  margin: 20
 };
 
 export default connect(null, mapDispatchToProps)(PlantForm);

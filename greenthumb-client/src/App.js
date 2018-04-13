@@ -12,6 +12,7 @@ import { fetchGardens } from './actions/fetchGardens';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -36,9 +37,11 @@ class App extends Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <Toolbar>
-            <Typography variant="title" color="inherit">
-              Greenthumb Gardens
-          </Typography>
+            <Link to="/">
+              <Typography variant="title" color="inherit">
+                Greenthumb Gardens
+              </Typography>
+            </Link>
           </Toolbar>
         </AppBar>
       </div>

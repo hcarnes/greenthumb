@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state, props) => {
   return {
-    garden: state.gardens[props.match.params.gardenId],
+    garden: state.gardens.find(garden => garden.id.toString() === props.match.params.gardenId),
     plants: state.plants.filter(plant => plant.gardenIndex.toString() === props.match.params.gardenId)
   };
 };

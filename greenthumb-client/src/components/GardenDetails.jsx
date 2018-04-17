@@ -8,8 +8,6 @@ import Paper from 'material-ui/Paper';
 
 class GardenDetails extends Component {
 
-
-
   componentDidMount() {
     if (this.props.plants.length == 0) this.props.fetchPlants(this.props.match.params.gardenId)
   }

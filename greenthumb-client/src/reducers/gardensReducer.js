@@ -19,6 +19,11 @@ export default function gardensReducer(state = {
       });
       return { ...state, plants: uniquePlants }
 
+    case 'UPDATE_PLANT':
+      const plantsWithoutOldPlant = state.plants.filter(plant => plant.id !== action.plant.id)
+      const plants = [...plantsWithoutOldPlant, action.plant]
+      return { ...state, plants }
+
     default:
       console.debug(action)
       return state;

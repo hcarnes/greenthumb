@@ -1,5 +1,5 @@
 class PlantSerializer < ActiveModel::Serializer
-  attributes :id, :name, :gardenIndex
+  attributes :id, :name, :gardenIndex, :likes
 
   def gardenIndex
     object.garden_index

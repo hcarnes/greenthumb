@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state, props) => {
   return {
     garden: state.gardens.find(garden => garden.id.toString() === props.match.params.gardenId),
-    plants: state.plants.filter(plant => plant.gardenIndex.toString() === props.match.params.gardenId)
+    plants: state.plants.filter(plant => plant.gardenIndex.toString() === props.match.params.gardenId).sort((a, b) => a.id - b.id)
   };
 };
 

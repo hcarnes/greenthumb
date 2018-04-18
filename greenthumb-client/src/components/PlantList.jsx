@@ -2,6 +2,7 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import LocalFlorist from 'material-ui-icons/LocalFlorist';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Counter from './Counter';
 
 class PlantList extends Component {
 
@@ -14,6 +15,7 @@ class PlantList extends Component {
               <ListItemIcon>
                 <LocalFlorist />
               </ListItemIcon>
+              <Counter plant={plant} />
               <ListItemText primary={plant.name} />
             </ListItem>
           ))}

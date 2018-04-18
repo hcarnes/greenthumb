@@ -11,4 +11,10 @@ class PlantsController < ApplicationController
     render json: plant
   end
 
+  def like
+    plant = Plant.find(params[:id])
+    plant.likes += 1
+    plant.save!
+    render json: plant
+  end
 end

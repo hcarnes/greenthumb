@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { likePlant } from '../actions/likePlant'
 import { bindActionCreators } from 'redux';
+import Button from 'material-ui/Button';
+import Icon from 'material-ui/Icon';
+import Favorite from 'material-ui-icons/Favorite';
 
 class Counter extends Component {
 
@@ -12,8 +15,10 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>Like</button>
-        {this.props.plant.likes}
+        <Button onClick={this.handleClick} variant="raised" size="small">
+          <Favorite />
+          {this.props.plant.likes}
+        </Button>
       </div>
     )
   }

@@ -5,7 +5,10 @@
 Users can search for a community garden in NYC and locate the garden on a corresponding map. Users can click on a garden to view more information about a particular garden. They can also view which plants can be found in each garden. Plants can be added and removed from gardens.
 
 ## Installation
-Clone this repository and run `bundle install`.
+Clone this repository
+Run `rails s`.
+cd hannahdev/greenthumb/greenthumb-client/
+Run `npm run start`
 
 ## Contributing
 

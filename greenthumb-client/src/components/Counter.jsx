@@ -36,7 +36,7 @@ const mapStateToProps = (state, props) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
 
-function digital_root(n) {
+function digital_root(num) {
   var total = 0;
   if (num.toString().length == 1) {
     var iNum = parseInt(num);

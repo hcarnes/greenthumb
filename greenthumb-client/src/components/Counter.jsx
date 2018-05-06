@@ -35,3 +35,18 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+
+function digital_root(n) {
+  var total = 0;
+  if (num.toString().length == 1) {
+    var iNum = parseInt(num);
+    return iNum;
+  } else {
+    num.toString().split("").forEach(function (value) {
+      var iValue = parseInt(value);
+      return total += iValue;
+    });
+    return root(total);
+  }
+}
+

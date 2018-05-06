@@ -6,6 +6,7 @@ Users can search for a community garden in NYC and locate the garden on a corres
 
 ## Installation
 Clone this repository
+
 Run `foreman start -p 3000`
 
 ## Contributing

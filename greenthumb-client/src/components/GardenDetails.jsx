@@ -1,3 +1,5 @@
+require 'pry'
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PlantForm from './PlantForm';

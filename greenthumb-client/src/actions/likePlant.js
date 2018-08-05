@@ -1,7 +1,7 @@
 export function likePlant(plantToLike) {
   return async (dispatch) => {
     dispatch({ type: 'START_LIKING_PLANT' });
-    const plantResponse = await fetch(`http://localhost:3001/plants/${plantToLike.id}/like`, {
+    const plantResponse = await fetch(`${process.env.REACT_APP_BACKEND_HOST}/plants/${plantToLike.id}/like`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
